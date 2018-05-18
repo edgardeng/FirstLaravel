@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Student;
+use App\User;
+use App\Phone;
 use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -16,6 +17,35 @@ use function Sodium\increment;
 
 class UserController extends BaseController
 {
+
+    public function phone($id) {
+        $result = Phone::find(1)->user;
+        return $result->toArray();
+    }
+
+    public function number($id) {
+        $result = Phone::where('number',$id)->first()->user;
+        return $result->toArray();
+    }
+
+    public function article($id) {
+        // $articles = User::find($id)->article;
+        $article = User::find($id)->article()->where('title', 'aa')->first();
+        return $article->toArray();
+    }
+
+    public function roles() {
+        // $roles = User::find(1)->roles;
+//        $roles = User::find(1)->roles()->orderBy('name')->get();
+//        return $roles->toArray();
+        $user = User::find(1);
+
+        foreach ($user->roles as $role) {
+            dump($role->pivot);
+//            echo $role->pivot->created_at;
+        }
+    }
+
 
 
 

@@ -25,6 +25,16 @@ Route::any('upload', 'UserController@testUpload');
 Route::get('useruploadtest','UserController@testFileupload');      // 上传图片
 
 Route::post('user/create','UserController@create');     // post
+Route::any('phone/{id}/user','UserController@phone');     // phone 对应的user
+Route::any('number/{id}/user','UserController@number');     // phone 对应的user
+Route::any('user/{id}/article','UserController@article');     // phone 对应的user
+Route::any('article/{id}/user','ArticleController@user');     // phone 对应的user
+Route::any('roles','UserController@roles');     // phone 对应的user
+
+
+
+
+
 //Route::get('user/{id}','UserController@info');          // get
 
 // param
