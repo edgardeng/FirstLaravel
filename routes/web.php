@@ -20,9 +20,9 @@ Route::get('article/{id}','ArticleController@show');
 
 
 Route::any('user/photo','UserController@photo');      // 上传图片
-Route::any('upload', 'UserController@testUpload');
+Route::any('upload', 'UploadController@testUpload');
 // api test
-Route::get('useruploadtest','UserController@testFileupload');      // 上传图片
+Route::any('file/upload','UploadController@uploadFile');      // 上传图片
 
 Route::post('user/create','UserController@create');     // post
 Route::any('phone/{id}/user','UserController@phone');     // phone 对应的user

@@ -55,6 +55,14 @@ return [
             'visibility' => 'public',
         ],
 
+        'upload' => [
+            'driver' => 'local',
+            'root' => storage_path('app/upload')
+        ],
+        'apk' => [
+            'driver' => 'local',
+            'root' => storage_path('app/apk')
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),
